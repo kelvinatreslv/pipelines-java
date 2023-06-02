@@ -36,3 +36,10 @@ steps:
     summaryFileLocation: "$(System.DefaultWorkingDirectory)/**/site/jacoco/jacoco.xml"
     reportDirectory: "$(System.DefaultWorkingDirectory)/**/site/jacoco"
     failIfCoverageEmpty: true
+- task: SnykSecurityScan@1
+  inputs:
+    serviceConnectionEndpoint: 'synk-azure-pipeline'
+    testType: 'app'
+    monitorWhen: 'always'
+    failOnIssues: true
+    projectName: 'azure-java'
