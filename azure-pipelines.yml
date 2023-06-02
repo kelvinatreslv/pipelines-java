@@ -40,6 +40,8 @@ steps:
   inputs:
     serviceConnectionEndpoint: 'synk-azure-pipeline'
     testType: 'app'
+    targetFile: '.'
     monitorWhen: 'always'
     failOnIssues: true
     projectName: 'azure-java'
+    organization: '9b1803a3-3c11-4178-b4b8-036fc30a211d'
