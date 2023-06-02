@@ -5,23 +5,19 @@
 
 trigger:
 - main
-
 strategy:
   matrix:
-    linux:
+    jdk10_linux:
       imageName: "ubuntu-latest"
-    mac:
-      imageName: "macOS-latest"
-    windows:
-      imageName: "windows-latest"
-    jdk10:
       jdkVersion: "1.10"
-    jdk11:
+    jdk11_windows:
+      imageName: "windows-latest"
       jdkVersion: "1.11"
-  maxParallel: 3
+  maxParallel: 2
 
 pool:
   vmImage: $(imageName)
+
 
 steps:
 - task: Maven@3
